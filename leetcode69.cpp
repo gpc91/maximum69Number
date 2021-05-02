@@ -8,7 +8,7 @@ int DigitDecimalPlace(int n, int dp);
 
 int main(){
 
-    int num = 9669;
+    int num = 9999;
 
     int num_length = DigitLength(num);
 
@@ -23,9 +23,9 @@ int main(){
         }
     }
 
+    int value = 0;
     if (highest >= 0)
-    {
-        int value = 0, ddp = -1;
+    {        
         for (int i = 0; i < num_length; i++)
         {
             if (i == highest) 
@@ -36,9 +36,13 @@ int main(){
             {
                 value += DigitDecimalPlace(num, ipow(10, i)) * ipow(10, i);
             }
-        }
-        printf("%i\n",value);
+        }        
     }
+    else 
+    {
+        value = num;
+    }
+    printf("%i\n",value);
     return 0;    
 }
 
